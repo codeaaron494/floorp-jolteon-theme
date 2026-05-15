@@ -1,0 +1,559 @@
+/*************************************************************************************************************************************************************************************************************************************************************
+
+"userChrome.css" is a custom CSS file that can be used to specify CSS style rules for Floorp's interface (NOT internal site) using "chrome" privileges.
+For instance, if you want to hide the tab bar, you can use the following CSS rule:
+
+**************************************
+#TabsToolbar {                       *
+    display: none !important;        *
+}                                    *
+**************************************
+
+NOTE: You can use the userChrome.css file without change preferences (about:config)
+
+Quote: https://userChrome.org | https://github.com/topics/userchrome 
+
+************************************************************************************************************************************************************************************************************************************************************/
+
+@charset "UTF-8";
+
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+
+:root{
+    --neon-yellow: #ffe600;
+    --neon-glow: #fff36b;
+    --neon-cyan: #00fff2;
+    --neon-cyan-glow: #6ffff8;
+    --neon-blue-dark: #1e00ff;
+    --neon-blue-dark-glow: #76baf9;
+    --neon-red: #ff5900;
+    --neon-red-glow: #ff9b6b;
+    --bg-dark: #050505;
+    --bg-soft: #101010;
+    --bg-panel: #080808;
+    --pure-black: #000000;
+
+    
+}
+
+/* =========================
+   BASE GENERAL
+========================= */
+
+#navigator-toolbox,
+#titlebar,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#sidebar-box{
+    background: var(--bg-dark) !important;
+    border: none !important;
+}
+
+#navigator-toolbox,
+#nav-bar,
+#titlebar{
+    overflow: visible !important;
+    position: relative !important;
+}
+
+*{
+    font-family: "Orbitron", "Segoe UI", sans-serif !important;
+}
+
+toolbarbutton image,
+.toolbarbutton-icon,
+.tab-icon-image,
+.menu-iconic-icon{
+    font-family: initial !important;
+}
+
+/* =========================
+   URL BAR
+========================= */
+
+#urlbar{
+    background: var(--bg-panel) !important;
+    border: 1px solid var(--neon-yellow) !important;
+    border-radius: 11px !important;
+    box-shadow:
+        0 0 5px var(--neon-yellow),
+        0 0 11px rgba(255,230,0,.55),
+        inset 0 0 8px rgba(255,230,0,.14) !important;
+    color: var(--neon-yellow) !important;
+}
+
+#urlbar:hover,
+#urlbar[focused="true"],
+#urlbar[open="true"]{
+    border-color: var(--neon-glow) !important;
+    box-shadow:
+        0 0 7px var(--neon-yellow),
+        0 0 15px rgba(255,230,0,.75),
+        inset 0 0 10px rgba(255,230,0,.18) !important;
+}
+
+#urlbar-background{
+    background: transparent !important;
+    border: 1px solid rgba(255,230,0,.85) !important;
+    border-radius: 11px !important;
+    box-shadow:
+        0 0 6px rgba(255,230,0,.85),
+        inset 0 0 7px rgba(255,230,0,.18) !important;
+}
+
+#urlbar-input{
+    color: var(--neon-yellow) !important;
+    font-size: 13.2px !important;
+    font-weight: 500 !important;
+    letter-spacing: .35px !important;
+    text-shadow: 0 0 4px rgba(255,230,0,.55) !important;
+}
+
+/* =========================
+   TEXTOS / TÍTULOS
+========================= */
+
+.tab-text,
+.bookmark-item,
+#sidebar-header,
+toolbarbutton:not(.titlebar-button),
+menu,
+menuitem{
+    color: var(--neon-yellow) !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    letter-spacing: .45px !important;
+    text-shadow: 0 0 4px rgba(255,230,0,.45) !important;
+}
+
+.tab-text{
+    font-size: 12.8px !important;
+    font-weight: 400 !important;
+}
+
+/* =========================
+   PESTAÑAS
+========================= */
+
+.tabbrowser-tab{
+    background: #080808 !important;
+    border-left: 2px solid transparent !important;
+    transition: all .2s ease !important;
+}
+
+.tabbrowser-tab:hover{
+    border-left: 2px solid var(--neon-yellow) !important;
+    box-shadow: 0 0 7px rgba(255,230,0,.7) !important;
+}
+
+.tabbrowser-tab[selected="true"]{
+    border-left: 3px solid var(--neon-yellow) !important;
+    background: #111111 !important;
+    box-shadow:
+        0 0 8px rgba(255,230,0,.75),
+        inset 0 0 7px rgba(255,230,0,.16) !important;
+}
+
+/* =========================
+   ICONOS GENERALES
+========================= */
+
+toolbarbutton,
+toolbarbutton .toolbarbutton-icon,
+.toolbarbutton-icon,
+#identity-icon,
+#tracking-protection-icon,
+#star-button,
+#reload-button,
+#back-button,
+#forward-button,
+#PanelUI-menu-button,
+#downloads-button,
+#home-button,
+#new-tab-button,
+#tabs-newtab-button,
+#alltabs-button{
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    stroke: var(--neon-yellow) !important;
+}
+
+toolbarbutton:hover{
+    background: rgba(255,230,0,.09) !important;
+    border-radius: 8px !important;
+    filter: drop-shadow(0 0 5px var(--neon-yellow)) !important;
+}
+
+/* =========================
+   FLOORP MOZ-BUTTON TOOLBAR
+========================= */
+
+moz-button{
+    --button-text-color: var(--neon-yellow) !important;
+    --button-background-color: transparent !important;
+    --button-border-color: transparent !important;
+    --button-hover-background-color: rgba(255,230,0,.12) !important;
+    --button-active-background-color: rgba(255,230,0,.20) !important;
+
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    stroke: var(--neon-yellow) !important;
+
+    filter: drop-shadow(0 0 4px rgba(255,230,0,.65)) !important;
+}
+
+moz-button::part(button){
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    stroke: var(--neon-yellow) !important;
+
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 9px !important;
+}
+
+moz-button:hover::part(button){
+    background: rgba(255,230,0,.12) !important;
+    border-color: rgba(255,230,0,.55) !important;
+    box-shadow: 0 0 8px rgba(255,230,0,.7) !important;
+}
+
+moz-button[checked="true"]::part(button),
+moz-button[aria-pressed="true"]::part(button),
+moz-button[open="true"]::part(button){
+    background: rgba(255,230,0,.20) !important;
+    border-color: var(--neon-yellow) !important;
+    box-shadow:
+        0 0 8px rgba(255,230,0,.8),
+        inset 0 0 6px rgba(255,230,0,.18) !important;
+}
+
+moz-button[view],
+moz-button[type="icon ghost"],
+moz-button[type="icon"],
+moz-button .button-background,
+moz-button .button-background *,
+moz-button image,
+moz-button svg,
+moz-button svg *{
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    stroke: var(--neon-yellow) !important;
+}
+
+/* Iconos de Floorp / sidebar izquierda */
+#browser toolboxbutton,
+#browser toolbarbutton,
+#sidebar-button,
+#floorp-sidebar toolbarbutton,
+#floorp-sidebar .toolbarbutton-icon,
+#vertical-tabs-newtab-button,
+#sidebar-switcher-target,
+#sidebar-switcher-arrow,
+[class*="floorp"] toolbarbutton,
+[id*="floorp"] toolbarbutton,
+[class*="sidebar"] toolbarbutton,
+[id*="sidebar"] toolbarbutton{
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    stroke: var(--neon-yellow) !important;
+    filter: drop-shadow(0 0 4px rgba(255,230,0,.75)) !important;
+}
+
+toolbarbutton svg,
+toolbarbutton svg *,
+#floorp-sidebar svg,
+#floorp-sidebar svg *,
+[class*="sidebar"] svg,
+[class*="sidebar"] svg *{
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    stroke: var(--neon-yellow) !important;
+}
+
+/* =========================
+   SIDEBAR NEGRO PURO
+========================= */
+
+#sidebar-box,
+#sidebar-main,
+#sidebar,
+#sidebar-header,
+#sidebar-select-box,
+#sidebar-search-container,
+#sidebar-splitter,
+#sidebar-switcher-target{
+    background: var(--pure-black) !important;
+    background-color: var(--pure-black) !important;
+}
+
+/* Contenedor principal */
+#sidebar-box{
+    border-right: 1px solid rgba(255,230,0,.45) !important;
+
+    box-shadow:
+        0 0 10px rgba(255,230,0,.55),
+        inset -1px 0 0 rgba(255,230,0,.18) !important;
+
+    border-radius: 0 !important;
+}
+
+/* Header interno */
+#sidebar-header{
+    border-bottom: 1px solid rgba(255,230,0,.28) !important;
+}
+
+/* Evita transparencias raras */
+#sidebar,
+#sidebar-box,
+#sidebar-main{
+    opacity: 1 !important;
+    backdrop-filter: none !important;
+}
+
+
+/* =========================
+   BOTONES DE VENTANA + GIFS
+========================= */
+
+.titlebar-button,
+.titlebar-buttonbox,
+.titlebar-min,
+.titlebar-max,
+.titlebar-restore,
+.titlebar-close{
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets" !important;
+    color: var(--neon-yellow) !important;
+}
+
+.titlebar-min .toolbarbutton-icon,
+.titlebar-max .toolbarbutton-icon,
+.titlebar-restore .toolbarbutton-icon,
+.titlebar-close .toolbarbutton-icon{
+    opacity: 0 !important;
+}
+
+.titlebar-min,
+.titlebar-max,
+.titlebar-restore,
+.titlebar-close{
+    position: relative !important;
+}
+
+/* Jolteon = minimizar */
+.titlebar-min::after{
+    content: "";
+    position: absolute;
+    inset: -11px -8px -8px -8px;
+    background-image: url("assets/jolteon.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    pointer-events: none;
+    filter:
+        drop-shadow(0 0 5px var(--neon-yellow))
+        drop-shadow(0 0 10px rgba(255,230,0,.8));
+}
+
+/* Umbreon = restaurar */
+.titlebar-restore::after{
+    content: "";
+    position: absolute;
+    inset: -11px -8px -8px -8px;
+    background-image: url("assets/umbreon.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    pointer-events: none;
+    filter:
+        drop-shadow(0 0 5px var(--neon-blue-dark))
+        drop-shadow(0 0 10px var(--neon-blue-dark-glow));
+}
+
+/* vaporeon = maximizar */
+.titlebar-max::after{
+    content: "";
+    position: absolute;
+    inset: -11px -8px -8px -8px;
+    background-image: url("assets/vaporeon.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    pointer-events: none;
+    filter:
+        drop-shadow(0 0 5px var(--neon-cyan))
+        drop-shadow(0 0 10px var(--neon-cyan-glow));
+}
+
+/* Flareon = cerrar */
+.titlebar-close::after{
+    content: "";
+    position: absolute;
+    inset: -11px -8px -8px -8px;
+    background-image: url("assets/flareon.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    pointer-events: none;
+    filter:
+        drop-shadow(0 0 5px var(--neon-red))
+        drop-shadow(0 0 10px var(--neon-red-glow));
+}
+
+#nav-bar::after{
+    content: none !important;
+}
+
+/* =========================
+   MENÚS Y POPUPS
+========================= */
+
+menupopup,
+panel{
+    --panel-background: #050505 !important;
+    --panel-color: var(--neon-yellow) !important;
+    --panel-border-color: var(--neon-yellow) !important;
+    --panel-border-radius: 10px !important;
+}
+
+menu,
+menuitem{
+    color: var(--neon-yellow) !important;
+}
+
+menu:hover,
+menuitem:hover{
+    background: rgba(255,230,0,.12) !important;
+}
+
+/* =========================
+   BARRA INFERIOR / STATUS
+========================= */
+
+#statuspanel,
+#statuspanel-label{
+    background: rgba(5,5,5,.95) !important;
+    color: var(--neon-yellow) !important;
+    border: 1px solid var(--neon-yellow) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 8px rgba(255,230,0,.65) !important;
+    font-size: 12.5px !important;
+}
+
+/* =========================
+   LIMPIEZA: SIN OVERLAY SIDEBAR
+========================= */
+
+#sidebar-box{
+    position: relative !important;
+    transform: none !important;
+    right: auto !important;
+    z-index: auto !important;
+}
+
+/* =========================
+   GRUPOS DE PESTAÑAS FLOORP
+========================= */
+
+.tab-group-label-hover-highlight{
+    background: transparent !important;
+    border-radius: 8px !important;
+    padding: 2px 5px !important;
+}
+
+.tab-group-label{
+    color: var(--neon-yellow) !important;
+    background: rgba(255,230,0,.10) !important;
+    border: 1px solid rgba(255,230,0,.70) !important;
+    border-radius: 8px !important;
+
+    font-family: "Orbitron", "Segoe UI", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: .45px !important;
+
+    text-shadow: 0 0 4px rgba(255,230,0,.55) !important;
+    box-shadow:
+        0 0 7px rgba(255,230,0,.60),
+        inset 0 0 6px rgba(255,230,0,.14) !important;
+
+    padding: 2px 8px !important;
+}
+
+.tab-group-label:hover,
+.tab-group-label-hover-highlight:hover .tab-group-label{
+    background: rgba(255,230,0,.18) !important;
+    border-color: var(--neon-yellow) !important;
+    box-shadow:
+        0 0 10px rgba(255,230,0,.85),
+        inset 0 0 7px rgba(255,230,0,.20) !important;
+}
+
+.tab-group-label[aria-expanded="true"]{
+    background: rgba(255,230,0,.20) !important;
+    border-color: var(--neon-yellow) !important;
+}
+
+.tab-group-label[aria-expanded="false"]{
+    opacity: .78 !important;
+    background: rgba(255,230,0,.07) !important;
+}
+
+/* =========================
+   BARRA DE MARCADORES FLOTANTE
+   No empuja la sidebar ni las pestañas verticales
+========================= */
+
+/* Asegurar que el contenedor principal esté por encima de la página web */
+#navigator-toolbox {
+    position: relative !important;
+    overflow: visible !important;
+    z-index: 10000 !important; 
+}
+
+/* Barra flotante */
+#PersonalToolbar{
+    position: absolute !important;
+    left: 97px !important;
+    right: 150px !important;
+    top: 46px !important;
+    width: auto !important;
+    height: 30px !important;
+    z-index: 9999 !important;
+    background: rgba(5,5,5,.92) !important;
+    border: 1px solid rgba(255,230,0,.65) !important;
+    border-radius: 10px !important;
+    box-shadow:
+        0 0 7px rgba(255,230,0,.55),
+        inset 0 0 6px rgba(255,230,0,.12) !important;
+    padding: 2px 8px !important;
+}
+
+/* Evita que la barra flotante genere espacio extra */
+#PersonalToolbar[collapsed="false"]{
+    display: flex !important;
+}
+
+/* Marcadores dentro */
+#PersonalToolbar toolbarbutton,
+#PersonalToolbar .bookmark-item{
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    font-size: 12.5px !important;
+    font-weight: 400 !important;
+}
+
+/* Hover de marcadores */
+#PersonalToolbar toolbarbutton:hover,
+#PersonalToolbar .bookmark-item:hover{
+    background: rgba(255,230,0,.12) !important;
+    border-radius: 7px !important;
+    filter: drop-shadow(0 0 5px var(--neon-yellow)) !important;
+}
+
+}
