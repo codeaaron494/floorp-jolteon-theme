@@ -1,0 +1,52 @@
+toolbarbutton,
+#identity-icon,
+#tracking-protection-icon,
+#star-button,
+#reload-button,
+#back-button,
+#forward-button,
+#PanelUI-menu-button,
+#downloads-button,
+#home-button,
+#new-tab-button,
+#tabs-newtab-button,
+#alltabs-button {
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    stroke: var(--neon-yellow) !important;
+}
+
+toolbarbutton:hover {
+    background: rgba(255, 230, 0, .09) !important;
+    border-radius: 8px !important;
+    filter: drop-shadow(0 0 5px var(--neon-yellow)) !important;
+}
+
+#PersonalToolbar {
+    position: absolute !important;
+    left: 97px !important;
+    right: 150px !important;
+    top: 46px !important;
+    width: auto !important;
+    height: 30px !important;
+    z-index: 9999 !important;
+    background: rgba(5, 5, 5, .92) !important;
+    border: 1px solid rgba(255, 230, 0, .65) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 7px rgba(255, 230, 0, .55), inset 0 0 6px rgba(255, 230, 0, .12) !important;
+    padding: 2px 8px !important;
+}
+
+#PersonalToolbar toolbarbutton,
+#PersonalToolbar .bookmark-item {
+    color: var(--neon-yellow) !important;
+    fill: var(--neon-yellow) !important;
+    font-size: 12.5px !important;
+}
+
+#PersonalToolbar toolbarbutton:hover,
+#PersonalToolbar .bookmark-item:hover {
+    background: rgba(255, 230, 0, .12) !important;
+    border-radius: 7px !important;
+    filter: drop-shadow(0 0 5px var(--neon-yellow)) !important;
+}

@@ -1,0 +1,27 @@
+#navigator-toolbox,
+#titlebar,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar,
+#sidebar-box {
+    background: var(--bg-dark) !important;
+    border: none !important;
+}
+
+#navigator-toolbox,
+#nav-bar,
+#titlebar {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+* {
+    font-family: "Orbitron", "Segoe UI", sans-serif !important;
+}
+
+toolbarbutton image,
+.toolbarbutton-icon,
+.tab-icon-image,
+.menu-iconic-icon {
+    font-family: initial !important;
+}

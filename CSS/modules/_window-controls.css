@@ -1,0 +1,36 @@
+.titlebar-button,
+.titlebar-buttonbox,
+.titlebar-min,
+.titlebar-max,
+.titlebar-restore,
+.titlebar-close {
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets" !important;
+    color: var(--neon-yellow) !important;
+}
+
+.titlebar-min .toolbarbutton-icon,
+.titlebar-max .toolbarbutton-icon,
+.titlebar-restore .toolbarbutton-icon,
+.titlebar-close .toolbarbutton-icon {
+    opacity: 0 !important;
+}
+
+.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
+    position: relative !important;
+}
+
+.titlebar-min::after, .titlebar-restore::after, .titlebar-max::after, .titlebar-close::after {
+    content: "";
+    position: absolute;
+    inset: -11px -8px -8px -8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+.titlebar-min::after { background-image: url("../assets/jolteon.gif"); filter: drop-shadow(0 0 5px var(--neon-yellow)) drop-shadow(0 0 10px rgba(255,230,0,.8)); }
+.titlebar-restore::after { background-image: url("../assets/vaporeon.gif"); filter: drop-shadow(0 0 5px var(--neon-blue-dark)) drop-shadow(0 0 10px var(--neon-blue-dark-glow)); }
+.titlebar-max::after { background-image: url("../assets/umbreon.gif"); filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(0 0 10px var(--neon-cyan-glow)); }
+.titlebar-close::after { background-image: url("../assets/flareon.gif"); filter: drop-shadow(0 0 5px var(--neon-red)) drop-shadow(0 0 10px var(--neon-red-glow)); }

@@ -1,0 +1,37 @@
+#urlbar {
+    background: var(--bg-panel) !important;
+    border: 1px solid var(--neon-yellow) !important;
+    border-radius: 11px !important;
+    box-shadow:
+        0 0 5px var(--neon-yellow),
+        0 0 11px rgba(255, 230, 0, .55),
+        inset 0 0 8px rgba(255, 230, 0, .14) !important;
+    color: var(--neon-yellow) !important;
+}
+
+#urlbar:hover,
+#urlbar[focused="true"],
+#urlbar[open="true"] {
+    border-color: var(--neon-glow) !important;
+    box-shadow:
+        0 0 7px var(--neon-yellow),
+        0 0 15px rgba(255, 230, 0, .75),
+        inset 0 0 10px rgba(255, 230, 0, .18) !important;
+}
+
+#urlbar-background {
+    background: transparent !important;
+    border: 1px solid rgba(255, 230, 0, .85) !important;
+    border-radius: 11px !important;
+    box-shadow:
+        0 0 6px rgba(255, 230, 0, .85),
+        inset 0 0 7px rgba(255, 230, 0, .18) !important;
+}
+
+#urlbar-input {
+    color: var(--neon-yellow) !important;
+    font-size: 13.2px !important;
+    font-weight: 500 !important;
+    letter-spacing: .35px !important;
+    text-shadow: 0 0 4px rgba(255, 230, 0, .55) !important;
+}

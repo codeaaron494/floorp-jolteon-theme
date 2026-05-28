@@ -1,0 +1,14 @@
+:root {
+    --neon-yellow: #ffe600;
+    --neon-glow: #fff36b;
+    --neon-cyan: #00fff2;
+    --neon-cyan-glow: #6ffff8;
+    --neon-blue-dark: #1e00ff;
+    --neon-blue-dark-glow: #76baf9;
+    --neon-red: #ff5900;
+    --neon-red-glow: #ff9b6b;
+    --bg-dark: #050505;
+    --bg-soft: #101010;
+    --bg-panel: #080808;
+    --pure-black: #000000;
+}
