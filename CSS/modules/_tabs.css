@@ -1,21 +1,81 @@
+/* =========================================================
+   PESTAÑAS VERTICALES NATIVAS (Cuadrado a Rectángulo)
+========================================================= */
+
+/* 1. Limpiamos la pestaña base para que no corte los bordes */
 .tabbrowser-tab {
-    background: #080808 !important;
-    border-left: 2px solid transparent !important;
-    transition: all .2s ease !important;
+    background: transparent !important;
+    border: none !important;
+    min-height: 42px !important; /* Altura fija para el cuadrado */
+    padding: 0 !important;
 }
 
-.tabbrowser-tab:hover {
-    border-left: 2px solid var(--neon-yellow) !important;
+/* 2. Estilizamos .tab-background (La caja visual real) */
+.tabbrowser-tab .tab-background {
+    border: 1px solid rgba(255, 230, 0, 0.2) !important; /* Los 4 lados cerrados */
+    border-radius: 8px !important;
+    background: #080808 !important;
+    margin: 4px !important; /* Margen simétrico para mantener la proporción */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-shadow: none !important;
+}
+
+/* 3. Hover en la pestaña */
+.tabbrowser-tab:hover .tab-background {
+    border: 1px solid var(--neon-yellow) !important;
     box-shadow: 0 0 7px rgba(255, 230, 0, .7) !important;
 }
 
-.tabbrowser-tab[selected="true"] {
-    border-left: 3px solid var(--neon-yellow) !important;
+/* 4. Pestaña Activa */
+.tabbrowser-tab[selected="true"] .tab-background {
+    border: 1px solid var(--neon-yellow) !important;
     background: #111111 !important;
     box-shadow:
         0 0 8px rgba(255, 230, 0, .75),
         inset 0 0 7px rgba(255, 230, 0, .16) !important;
 }
+
+/* 5. Ocultar la línea superior/lateral que Floorp pone por defecto */
+.tabbrowser-tab .tab-context-line {
+    display: none !important;
+}
+
+/* =========================================================
+   CONTROL DE ANCHO MÁXIMO (Panel Desplegado)
+========================================================= */
+
+/* 1. Sobreescribir las variables nativas de Floorp */
+:root {
+    --floorp-vertical-tab-width: 150px !important; /* Ajusta a tu gusto */
+}
+
+/* 2. Forzar el límite en el contenedor principal de pestañas */
+#vertical-tabs {
+    max-width: 150px !important; /* Debe coincidir con el valor de arriba */
+    transition: max-width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                min-width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* 3. Contenedor interno de las pestañas */
+#tabbrowser-tabs[orient="vertical"] {
+    max-width: 100% !important; 
+}
+
+/* 4. Asegurar que el texto largo no rompa el diseño y muestre puntos suspensivos (...) */
+.tabbrowser-tab[orient="vertical"] .tab-label-container {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.tabbrowser-tab[orient="vertical"] .tab-text {
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+/* =========================================================
+   ETIQUETAS DE GRUPO DE PESTAÑAS
+========================================================= */
 
 .tab-group-label-hover-highlight {
     background: transparent !important;
