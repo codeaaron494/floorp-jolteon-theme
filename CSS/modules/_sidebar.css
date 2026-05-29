@@ -1,34 +1,55 @@
-#sidebar-box,
-#sidebar-main,
-#sidebar,
-#sidebar-header,
-#sidebar-select-box,
-#sidebar-search-container,
-#sidebar-splitter,
-#sidebar-switcher-target {
-    background: var(--pure-black) !important;
-    background-color: var(--pure-black) !important;
-}
+/* =========================================================
+   SIDEBAR: Estilo Compacto con Expansión Fluida y Cards
+========================================================= */
 
 #sidebar-box {
-    border-right: 1px solid rgba(255, 230, 0, .45) !important;
-    box-shadow:
-        0 0 10px rgba(255, 230, 0, .55),
-        inset -1px 0 0 rgba(255, 230, 0, .18) !important;
-    border-radius: 0 !important;
-    position: relative !important;
-    transform: none !important;
-    right: auto !important;
-    z-index: auto !important;
+    min-width: 50px !important; /* Tamaño cuando está contraído */
+    max-width: 50px !important;
+    transition: all 0.3s ease !important;
+    z-index: 100 !important;
+    background: var(--pure-black) !important;
+    border-right: 1px solid rgba(255, 230, 0, 0.45) !important;
+}
+
+#sidebar-box:hover {
+    min-width: 200px !important; /* Tamaño cuando se expande */
+    max-width: 200px !important;
+}
+
+/* Estilo de las pestañas tipo "Card" */
+.tabbrowser-tab {
+    border: 1px solid rgba(255, 230, 0, 0.2) !important;
+    border-radius: 8px !important;
+    margin: 4px 6px !important;
+    background: #080808 !important;
+    transition: all 0.2s ease !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+    border: 1px solid var(--neon-yellow) !important;
+    background: #111111 !important;
+    box-shadow: 0 0 8px rgba(255, 230, 0, 0.4) !important;
+}
+
+/* Ocultar texto cuando el sidebar está contraído */
+#sidebar-box:not(:hover) .tab-text {
+    display: none !important;
+}
+
+/* Centrar iconos en modo contraído */
+#sidebar-box:not(:hover) .tab-icon-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Ajustes de limpieza visual del sidebar */
+#sidebar-main,
+#sidebar,
+#sidebar-header {
+    background: var(--pure-black) !important;
+    backdrop-filter: none !important;
 }
 
 #sidebar-header {
-    border-bottom: 1px solid rgba(255, 230, 0, .28) !important;
-}
-
-#sidebar,
-#sidebar-box,
-#sidebar-main {
-    opacity: 1 !important;
-    backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(255, 230, 0, 0.28) !important;
 }

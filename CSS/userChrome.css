@@ -1,17 +1,10 @@
-/******************************************************************************
-    Floorp-Jolteon-Theme
-    Estructura modularizada para mejor mantenimiento.
-******************************************************************************/
-
 @charset "UTF-8";
 
-@-moz-document url(chrome://browser/content/browser.xhtml) {
-    /* Llamadas a los módulos */
+
     @import url("modules/_variables.css");
     @import url("modules/_layout.css");
     @import url("modules/_urlbar.css");
+    @import url("modules/_tabs.css");
     @import url("modules/_sidebar.css");
     @import url("modules/_window-controls.css");
     @import url("modules/_toolbars.css");
-    @import url("modules/_tabs.css");
-}
