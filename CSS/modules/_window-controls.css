@@ -30,7 +30,7 @@
     pointer-events: none;
 }
 
-.titlebar-min::after { background-image: url("../assets/jolteon.gif"); filter: drop-shadow(0 0 5px var(--neon-yellow)) drop-shadow(0 0 10px rgba(255,230,0,.8)); }
-.titlebar-restore::after { background-image: url("../assets/vaporeon.gif"); filter: drop-shadow(0 0 5px var(--neon-blue-dark)) drop-shadow(0 0 10px var(--neon-blue-dark-glow)); }
-.titlebar-max::after { background-image: url("../assets/umbreon.gif"); filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(0 0 10px var(--neon-cyan-glow)); }
-.titlebar-close::after { background-image: url("../assets/flareon.gif"); filter: drop-shadow(0 0 5px var(--neon-red)) drop-shadow(0 0 10px var(--neon-red-glow)); }
+.titlebar-min::after { background-image: url("../../assets/jolteon.gif"); filter: drop-shadow(0 0 5px var(--neon-yellow)) drop-shadow(0 0 10px rgba(255,230,0,.8)); }
+.titlebar-restore::after { background-image: url("../../assets/vaporeon.gif"); filter: drop-shadow(0 0 5px var(--neon-blue-dark)) drop-shadow(0 0 10px var(--neon-blue-dark-glow)); }
+.titlebar-max::after { background-image: url("../../assets/umbreon.gif"); filter: drop-shadow(0 0 5px var(--neon-cyan)) drop-shadow(0 0 10px var(--neon-cyan-glow)); }
+.titlebar-close::after { background-image: url("../../assets/flareon.gif"); filter: drop-shadow(0 0 5px var(--neon-red)) drop-shadow(0 0 10px var(--neon-red-glow)); }
