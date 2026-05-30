@@ -1,127 +1,14 @@
 /* =========================================================
-   PESTAÑAS VERTICALES NATIVAS (Cuadrado a Rectángulo)
+   FONDO NEGRO PARA PESTAÑAS VERTICALES
 ========================================================= */
-
-/* 1. Limpiamos la pestaña base para que no corte los bordes */
-.tabbrowser-tab {
-    background: transparent !important;
-    border: none !important;
-    min-height: 42px !important;
-    padding: 0 !important;
-    position: relative !important;
-}
-
-/* 2. tab-content: respetamos el flujo original de XUL,
-      solo quitamos padding para no añadir offset */
-.tabbrowser-tab .tab-content {
-    padding: 12px !important;
-}
-
-/* 3. .tab-background con margin: 4px simétrico, igual que antes */
-.tabbrowser-tab .tab-background {
-    border: 1px solid rgba(255, 230, 0, 0.2) !important;
-    border-radius: 8px !important;
-    background: #080808 !important;
-    margin: 4px !important;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-    box-shadow: none !important;
-}
-
-/* 4. Hover en la pestaña */
-.tabbrowser-tab:hover .tab-background {
-    border: 1px solid var(--neon-yellow) !important;
-    box-shadow: 0 0 7px rgba(255, 230, 0, .7) !important;
-}
-
-/* 5. Pestaña Activa */
-.tabbrowser-tab[selected="true"] .tab-background {
-    border: 1px solid var(--neon-yellow) !important;
-    background: #111111 !important;
-    box-shadow:
-        0 0 8px rgba(255, 230, 0, .75),
-        inset 0 0 7px rgba(255, 230, 0, .16) !important;
-}
-
-/* 6. Ocultar la línea superior/lateral que Floorp pone por defecto */
-.tabbrowser-tab .tab-context-line {
-    display: none !important;
-}
-
-/* =========================================================
-   CONTROL DE ANCHO MÁXIMO Y FONDO (Panel Desplegado)
-========================================================= */
-
-:root {
-    --floorp-vertical-tab-width: 150px !important;
-}
 
 /* Contenedor principal de pestañas verticales: Fondo negro intenso */
 #vertical-tabs {
     background: var(--pure-black) !important;
-    max-width: 150px !important;
-    transition: max-width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-                min-width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
 /* Limpiamos fondos residuales de contenedores internos de Floorp */
 #vertical-tabs-pane,
 #tabbrowser-tabs[orient="vertical"] {
     background: transparent !important;
-    max-width: 100% !important;
-}
-
-.tabbrowser-tab[orient="vertical"] .tab-label-container {
-    max-width: 100% !important;
-    overflow: hidden !important;
-}
-
-.tabbrowser-tab[orient="vertical"] .tab-text {
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-}
-
-/* =========================================================
-   ETIQUETAS DE GRUPO DE PESTAÑAS
-========================================================= */
-
-.tab-group-label-hover-highlight {
-    background: transparent !important;
-    border-radius: 8px !important;
-    padding: 2px 5px !important;
-}
-
-.tab-group-label {
-    color: var(--neon-yellow) !important;
-    background: rgba(255, 230, 0, .10) !important;
-    border: 1px solid rgba(255, 230, 0, .70) !important;
-    border-radius: 8px !important;
-    font-family: "Orbitron", "Segoe UI", sans-serif !important;
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    letter-spacing: .45px !important;
-    text-shadow: 0 0 4px rgba(255, 230, 0, .55) !important;
-    box-shadow:
-        0 0 7px rgba(255, 230, 0, .60),
-        inset 0 0 6px rgba(255, 230, 0, .14) !important;
-    padding: 2px 8px !important;
-}
-
-.tab-group-label:hover,
-.tab-group-label-hover-highlight:hover .tab-group-label {
-    background: rgba(255, 230, 0, .18) !important;
-    border-color: var(--neon-yellow) !important;
-    box-shadow:
-        0 0 10px rgba(255, 230, 0, .85),
-        inset 0 0 7px rgba(255, 230, 0, .20) !important;
-}
-
-.tab-group-label[aria-expanded="true"] {
-    background: rgba(255, 230, 0, .20) !important;
-    border-color: var(--neon-yellow) !important;
-}
-
-.tab-group-label[aria-expanded="false"] {
-    opacity: .78 !important;
-    background: rgba(255, 230, 0, .07) !important;
 }
