@@ -1,3 +1,7 @@
+/* =========================================================
+   BARRA DE DIRECCIONES (URL BAR) - JOLTEON THEME
+========================================================= */
+
 #urlbar {
     background: var(--bg-panel) !important;
     border: 1px solid var(--neon-yellow) !important;
@@ -7,12 +11,20 @@
         0 0 11px rgba(255, 230, 0, .55),
         inset 0 0 8px rgba(255, 230, 0, .14) !important;
     color: var(--neon-yellow) !important;
+    
+    /* MATA EL COLOR DE ENFOQUE NATIVO DE FLOORP/FIREFOX */
+    outline: none !important;
+    --toolbar-field-focus-border-color: transparent !important;
 }
 
 #urlbar:hover,
 #urlbar[focused="true"],
 #urlbar[open="true"] {
     border-color: var(--neon-glow) !important;
+    
+    /* Aseguramos que no aparezca el outline al hacer clic/escribir */
+    outline: none !important;
+    
     box-shadow:
         0 0 7px var(--neon-yellow),
         0 0 15px rgba(255, 230, 0, .75),
@@ -26,6 +38,9 @@
     box-shadow:
         0 0 6px rgba(255, 230, 0, .85),
         inset 0 0 7px rgba(255, 230, 0, .18) !important;
+        
+    /* Previene bordes internos fantasma */
+    outline: none !important;
 }
 
 #urlbar-input {
